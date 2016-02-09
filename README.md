@@ -3,7 +3,9 @@ An algorithm for low-dimensional Orthogonal Nonnegative Matrix Factorization and
 
 The package implements the algorithms of our NIPS 2015 paper [Orthogonal NMF through Subspace Exploration](http://papers.nips.cc/paper/5998-orthogonal-nmf-through-subspace-exploration).
 
-
+Requirements
+------------
+No real requirement, but  you may also want to download the [textprogressbar](https://github.com/megasthenis/textprogressbar) and install it in Matlab's path. 
 
 Example Usage
 -------------

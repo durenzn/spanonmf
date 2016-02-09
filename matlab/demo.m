@@ -20,8 +20,6 @@ W = spannnpcamulti(M, k, ...
                    'numsamples', 1e4 ...
                   );
 
-
-
 %% SpanONMF
 
 % Generate a nonnegative data matrix:

@@ -2,7 +2,6 @@ function [W] = spannnpcamulti(M, k, varargin)
 % [W, H] = SPANNNPCAMULTI(M, K) returns a N x K nonnegative matrix W with
 % orthonormal columns that contain the extracted (approximate) nonnegative
 % components of the m x n (raw) data matrix M.
-%
 
 [m, n] = size(M);
 
@@ -82,8 +81,6 @@ while(true)
         optval = localobj;
         optW = W;
     end
-    
-    assert(columnsHaveDisjointSupport(W))
     
 end
 
