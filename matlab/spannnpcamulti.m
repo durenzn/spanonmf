@@ -2,6 +2,14 @@ function [W] = spannnpcamulti(M, k, varargin)
 % [W, H] = SPANNNPCAMULTI(M, K) returns a N x K nonnegative matrix W with
 % orthonormal columns that contain the extracted (approximate) nonnegative
 % components of the m x n (raw) data matrix M.
+%
+% SPANNNPCAMULTI(...,'approximationrank',r) uses a rank-r approximation of
+% the input to solve the nn PCA problem. Default value is r=5.
+% SPANNNPCAMULTI(...,'numsamples',T) determines the number of samples drawn
+% (iterations performed) by the algorithm. Default is T=1e5.
+% SPANNNPCAMULTI(...,'verbose',true) allows the algorithm to print progress
+% messages and display a progress bar (if available). 
+% SPANNNPCAMULTI(...,'verbose',false) suppresses messages and progress bar.
 
 [m, n] = size(M);
 
@@ -47,11 +55,9 @@ VS = V*S;
 if verbose
     fprintf('Done. (%d seconds)\n', round(toc(tsvd)));
 end
-    
 
 signpatterns = de2bi(0:2^k-1, k);
 signpatterns(signpatterns==0) = -1;
-
 
 iter = 0;
 optval = -Inf;
